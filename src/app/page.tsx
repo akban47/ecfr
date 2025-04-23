@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import AgencyWordCountChart from '@/components/AgencyWordCountChart';
 import HistoricalChangesChart from '@/components/HistoricalChangesChart';
 import TitleSummaries from '@/components/TitleSummaries';
@@ -203,26 +203,5 @@ export default function Home() {
         ) : null}
       </div>
     </main>
-  );
-}
-
-export function Loading() {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-pulse text-gray-600">
-        Loading eCFR analysis...
-      </div>
-    </div>
-  );
-}
-
-export function ErrorBoundary({ error }: { error: Error }) {
-  return (
-    <div className="min-h-screen p-8">
-      <div className="bg-red-50 text-red-600 p-4 rounded-lg">
-        <h2 className="text-lg font-semibold mb-2">Error Loading Data</h2>
-        <p>{error.message}</p>
-      </div>
-    </div>
   );
 }
